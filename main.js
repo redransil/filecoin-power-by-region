@@ -23,24 +23,19 @@ async function findPower(){
 
     console.log(`minerID: ${minerID}`)
 
-    var thing = Date.parse(start)
-    console.log(thing)
-    var stuff = new Date(thing-3600000)
-    console.log(stuff)
 
-    // thing.setTime(startDate.getDate())
-    // console.log(thing)
     sealing_records = {'data':{'data':[]}}
     for (let j=0; j<365 && sealing_records.data.data.length==0; j++){
 
       // If an SP doesn't have recent activity, need to adjust date back
       var unixStartDate = Date.parse(start)
-      var startDate = new Date(thing-3600000*24*j) //Step back one day per loop iteration
+      var startDate = new Date(unixStartDate-3600000*24*j) //Step back one day per loop iteration
       yearNum = startDate.getYear()-100+2000
       monthNum = startDate.getMonth()+1
       dayNum = startDate.getDate()
       start = `${yearNum}-${`${monthNum}`.padStart(2,'0')}-${`${dayNum}`.padStart(2,'0')}`
 
+      // this actually may give a value that is too high; try reconstructing from sealing and storage data
       requestString = `https://api.filecoin.energy/models/export?end=${end}&id=${modelnum}&limit=${limit}&offset=0&start=${start}&miner=${minerID}`
       var sealing_records = await axios.get(requestString)
     }
