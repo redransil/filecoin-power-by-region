@@ -1,0 +1,22 @@
+{
+  "name": "filecoin-power-by-region",
+  "version": "1.0.0",
+  "description": "Use the filecoin.energy API to estimate power use by region",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redransil/filecoin-power-by-region.git"
+  },
+  "author": "Alan Ransil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redransil/filecoin-power-by-region/issues"
+  },
+  "homepage": "https://github.com/redransil/filecoin-power-by-region#readme",
+  "dependencies": {
+    "axios": "^0.25.0"
+  }
+}
