@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/redransil/filecoin-power-by-region#readme",
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "json2csv": "^5.0.6"
   }
 }

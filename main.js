@@ -1,6 +1,7 @@
 let axios = require("axios")
 const fs = require('fs')
 const energyModel = require('../filecoin-energy-estimation/model-parameters/v-1-0-1.json')
+const json2csvparse = require('json2csv')
 
 locationsFile = './locations/20220108_minerLocationsReport.json'
 country = 'US'
@@ -80,9 +81,13 @@ async function findPower(){
   }
 
   console.log(powerRecords)
+  fs.writeFileSync('powerRecords.csv', json2csvparse.parse(powerRecords))
 
   total_power_W = powerRecords.reduce((prev, elem)=> prev+elem.total_power_W, 0)
+
   console.log(total_power_W)
+
+
 }
 
 
