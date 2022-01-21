@@ -39,7 +39,7 @@ async function findPower(){
   powerRecords = []
 
   idxmax = locs.length
-  idxmax = 10
+  // idxmax = 10
   for (let idx=0; idx<idxmax; idx++){
 
     minerID = locs[idx].miner
